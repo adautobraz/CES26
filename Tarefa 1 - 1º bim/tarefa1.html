@@ -1,0 +1,71 @@
+<html>
+<body>
+
+<!-- adicionar elemento-->
+<div id="div1">
+<p id="p1">Primeiro parágrafo.</p>
+<p id="p2">Segundo parágrafo</p>
+</div><br>
+
+<script>
+var paragrafo = document.createElement("p");
+var node = document.createTextNode("Novo paragrafo.");
+paragrafo.appendChild(node);
+
+var element = document.getElementById("div1");
+element.appendChild(paragrafo);
+</script>
+
+<!-- remover elementos -->
+<div id="div2">
+<p id="p3">Terceiro parágrafo.</p>
+<p id="p4">Quarto parágrafo</p>
+</div><br>
+
+<script>
+var parent = document.getElementById("div2");
+var child = document.getElementById("p3");
+parent.removeChild(child);
+</script>
+
+
+<!-- modificar elementos -->
+
+<div id="div2">
+<p id="p5">Quinto parágrafo.</p>
+<p id="p6">Sexto parágrafo</p>
+</div>
+
+<script>
+document.getElementById("p5").innerHTML = "Quinto parágrafo modificado!";
+</script>
+
+<!-- manipuladores de eventos -->
+
+<p>Teste do EventListener para atribuir um evento ao click do botão</p>
+
+<button id="myBtn">Clique aqui</button><br><br>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", function(){
+    alert("Look what you made me do!");
+});
+</script>
+
+<!-- Teste de Collections -->
+<p>Teste de Collections para mudar atributos dos paragrafos</p>
+
+<button onclick="myFunction()">Pintar paragrafos</button>
+
+<script>
+function myFunction() {
+    var myCollection = document.getElementsByTagName("p");
+    var i;
+    for (i = 0; i < myCollection.length; i++) {
+        myCollection[i].style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>

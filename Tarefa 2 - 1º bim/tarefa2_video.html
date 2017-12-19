@@ -1,0 +1,46 @@
+<!-- Teste de video -->
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<div style="text-align:center"> 
+  <button onclick="playPause()" id="playBtn">Play/Pause</button> 
+  <button onclick="makeBig()" id="largeBtn">Large</button>
+  <button onclick="makeSmall()" id="smallBtn">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <br><br>
+  <video id="video1" width="600">
+    <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+    <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/ogg">
+    Seu browser nao suporta videos no HTML5.
+  </video>
+</div> 
+
+<button onclick="getLocation()">Try It</button>
+
+<script> 
+var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+    if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+        myVideo.pause(); 
+} 
+
+function makeBig() { 
+    myVideo.width = 800; 
+} 
+
+function makeSmall() { 
+    myVideo.width = 400; 
+} 
+
+function makeNormal() { 
+    myVideo.width = 600; 
+} 
+
+</script>
+
+</body> 
+</html>
